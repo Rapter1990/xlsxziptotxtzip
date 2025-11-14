@@ -1,0 +1,30 @@
+server:
+  port: 1929
+
+spring:
+  application:
+    name: xlsxziptotxtzip
+
+
+# SWAGGER
+springdoc:
+  api-docs:
+    enabled: true
+  show-actuator: true
+  swagger-ui:
+    tags-sorter: alpha
+    operations-sorter: alpha
+
+# Prometheus
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+          - prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
