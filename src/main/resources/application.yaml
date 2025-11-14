@@ -4,7 +4,26 @@ server:
 spring:
   application:
     name: xlsxziptotxtzip
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
+# MYSQL
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    name: mysql
+    url: jdbc:mysql://${ZIP_DB_IP:localhost}:${ZIP_DB_PORT:3306}/zipdatabase
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:password}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
 
 # SWAGGER
 springdoc:
