@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.info.Info;
                         url = "https://github.com/Rapter1990/xlsxziptotxtzip"
                 ),
                 description = "Case Study - Xlsx Zip To Txt Zip" +
-                        " (Java 25, Spring Boot, Mysql, JUnit, Docker, Kubernetes, Prometheus, Grafana, Github Actions (CI/CD), Jenkins) ",
+                        " (Java 25, Spring Boot, Mysql, JUnit, Docker, Kubernetes, Prometheus, Grafana, Github Actions (CI/CD), Jenkins, Sonarqube) ",
                 title = "xlsxziptotxtzip",
                 version = "1.0.0"
         )
