@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "a10bf745-3491-49f5-9576-75848087313a",
+		"name": "Xlsx Zip to Txt Zip",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33002673"
+	},
+	"item": [
+		{
+			"name": "Xlsx Zip to Txt Zip",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/zip"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Noyan/Downloads/example.zip"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1929/api/upload-zip",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1929",
+					"path": [
+						"api",
+						"upload-zip"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://localhost:1929/api/upload-zip\" \\\r\n  -H \"Accept: application/zip\" \\\r\n  -F \"file=@/full/path/to/example.zip\" \\\r\n  -OJ"
+			},
+			"response": []
+		},
+		{
+			"name": "Get List with Pagination and Sorting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pagination\": {\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 20\r\n  },\r\n  \"sorting\": {\r\n    \"sortBy\": \"time\",\r\n    \"sortDirection\": \"DESC\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1929/api/logs/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1929",
+					"path": [
+						"api",
+						"logs",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List with Pagination",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pagination\": {\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 20\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1929/api/logs/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1929",
+					"path": [
+						"api",
+						"logs",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
