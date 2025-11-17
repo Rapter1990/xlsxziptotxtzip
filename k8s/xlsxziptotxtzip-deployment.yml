@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xlsxziptotxtzip
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xlsxziptotxtzip
+  template:
+    metadata:
+      labels:
+        app: xlsxziptotxtzip
+    spec:
+      containers:
+        - name: xlsxziptotxtzip
+          image: noyandocker/xlsxziptotxtzip:latest
+          ports:
+            - containerPort: 1929  # Use the SERVER_PORT from the config map, if applicable.
+          envFrom:
+            - configMapRef:
+                name: xlsxziptotxtzip-config
+          env:
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: DATABASE_USERNAME
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: DATABASE_PASSWORD
+            - name: spring.datasource.url
+              value: "jdbc:mysql://mysql.default.svc.cluster.local:3307/zipdatabase"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: xlsxziptotxtzip-service
+  namespace: default
+spec:
+  selector:
+    app: xlsxziptotxtzip
+  ports:
+    - protocol: TCP
+      port: 1929
+      targetPort: 1929
+  type: NodePort

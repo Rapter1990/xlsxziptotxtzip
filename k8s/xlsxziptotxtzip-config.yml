@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: xlsxziptotxtzip-config
+  namespace: default
+data:
+  ZIP_DB_IP: "mysql.default.svc.cluster.local"
+  ZIP_DB_PORT: "3307"
+  SERVER_PORT: "1929"
