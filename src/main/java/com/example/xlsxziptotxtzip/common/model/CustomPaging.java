@@ -26,7 +26,7 @@ public class CustomPaging {
      *
      * @return the page index (zero-based)
      */
-    public Integer getPageNumber() {
+    public Integer getPageIndex() {
         return pageNumber - 1;
     }
 

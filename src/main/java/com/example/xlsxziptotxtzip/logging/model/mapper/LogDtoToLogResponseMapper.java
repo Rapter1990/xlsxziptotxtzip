@@ -14,27 +14,6 @@ import org.mapstruct.factory.Mappers;
 public interface LogDtoToLogResponseMapper extends BaseMapper<LogDto, LogResponse> {
 
     /**
-     * Map a LogDto to a LogResponse.
-     */
-    @Named("mapFromDto")
-    default LogResponse mapFromDto(LogDto source) {
-        if (source == null) {
-            return null;
-        }
-
-        return LogResponse.builder()
-                .id(source.getId())
-                .message(source.getMessage())
-                .endpoint(source.getEndpoint())
-                .method(source.getMethod())
-                .status(source.getStatus())
-                .errorType(source.getErrorType())
-                .operation(source.getOperation())
-                .time(source.getTime())
-                .build();
-    }
-
-    /**
      * Get singleton instance of the mapper.
      */
     static LogDtoToLogResponseMapper initialize() {
