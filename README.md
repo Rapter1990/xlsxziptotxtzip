@@ -1,7 +1,7 @@
 ## Case Study - XLSX ZIP to TXT ZIP Conversion
 
 <p align="center">
-    <img src="screenshots/main-image.png" alt="Main Information" width="800" height="550">
+    <img src="screenshots/main_image.png" alt="Main Information" width="800" height="550">
 </p>
 
 ### 📖 Information
