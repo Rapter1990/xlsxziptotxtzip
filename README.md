@@ -8,7 +8,7 @@
 
 ### Project Definition (XLSX ZIP to TXT ZIP Conversion)
 
-<p> A Spring Boot service that processes a user-uploaded **ZIP file** containing one or more **Mockaroo-style XLSX files**. The service extracts each XLSX, converts its content into a **column-aligned TXT file**, and returns all generated TXT files wrapped in a **new ZIP archive**. A separate logging endpoint allows for retrieval of application logs with **pagination and sorting** capabilities. </p>
+<p> A Spring Boot service that processes a user-uploaded <b>ZIP file</b> containing one or more <b>Mockaroo-style XLSX files</b>. The service extracts each XLSX, converts its content into a <b>column-aligned TXT file</b>, and returns all generated TXT files wrapped in a <b>new ZIP archive</b>. A separate logging endpoint allows for retrieval of application logs with <b>pagination and sorting</b> capabilities. </p>
 
 #### End-to-end flow (Convert ZIP API):
 
@@ -70,6 +70,15 @@ Endpoints Summary
 * AOP
 * Sonarqube
 * Jenkins
+* Apache POI
+
+-----
+
+### Postman
+
+```
+Import postman collection under postman_collection folder
+```
 
 -----
 
@@ -78,7 +87,6 @@ Endpoints Summary
 #### Define Variable in .env file
 
 ```
-# Note: Database settings are not directly relevant to the core logic shown but may be required for LogController
 ZIP_DB_IP=localhost
 ZIP_DB_PORT=3306
 DATABASE_USERNAME={MY_SQL_DATABASE_USERNAME}
@@ -89,16 +97,26 @@ DATABASE_PASSWORD={MY_SQL_DATABASE_PASSWORD}
 
 ### Open Api (Swagger)
 
-Explore the API and schemas at: `http://localhost:1929/swagger-ui/index.html` (port configurable).
+```
+http://localhost:1929/swagger-ui/index.html
+```
 
------
+### JaCoCo (Test Report)
+
+After the command named `mvn clean install` completes, the JaCoCo report will be available at:
+```
+target/site/jacoco/index.html
+```
+Navigate to the `target/site/jacoco/` directory.
+
+Open the `index.html` file in your browser to view the detailed coverage report.
+
+---
 
 ### Maven, Docker and Kubernetes Running Process
 
-**(The instructions for Maven, Docker, and Kubernetes running processes, including observability tools like Prometheus/Grafana, remain the same as the example README.md.)**
 
 ### Maven Run
-
 To build and run the application with `Maven`, please follow the directions shown below;
 
 ```sh
